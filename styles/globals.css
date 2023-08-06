@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply h-full;
+  @apply bg-background-primary;
+  @apply text-foreground-primary;
+  @apply scroll-smooth;
+}
+
+:root {
+  --gt-black-100: #cdcdcf;
+  --gt-black-200: #9a9ca0;
+  --gt-black-300: #686a70;
+  --gt-black-400: #353941;
+  --gt-black-500: #030711;
+  --gt-black-600: #02060e;
+  --gt-black-700: #02040a;
+  --gt-black-800: #010307;
+  --gt-black-900: #010409;
+
+  --gt-white-100: #fdfdfe;
+  --gt-white-200: #fbfcfd;
+  --gt-white-300: #fafafb;
+  --gt-white-400: #f8f9fa;
+  --gt-white-500: #f6f7f9;
+  --gt-white-600: #c5c6c7;
+  --gt-white-700: #949495;
+  --gt-white-800: #626364;
+  --gt-white-900: #313132;
+
+  --gt-frosty-100: #f9fbfc;
+  --gt-frosty-200: #f3f6f9;
+  --gt-frosty-300: #eef2f6;
+  --gt-frosty-400: #e8edf3;
+  --gt-frosty-500: #e2e9f0;
+  --gt-frosty-600: #b5bac0;
+  --gt-frosty-700: #888c90;
+  --gt-frosty-800: #5a5d60;
+  --gt-frosty-900: #2d2f30;
+
+  --gt-slate-100: #dbdde1;
+  --gt-slate-200: #b7bbc3;
+  --gt-slate-300: #939aa4;
+  --gt-slate-400: #6f7886;
+  --gt-slate-500: #4b5668;
+  --gt-slate-600: #3c4553;
+  --gt-slate-700: #2d343e;
+  --gt-slate-800: #1e222a;
+  --gt-slate-900: #0f1115;
+
+  --gt-midnight-100: #cfd0d2;
+  --gt-midnight-200: #a0a1a4;
+  --gt-midnight-300: #707177;
+  --gt-midnight-400: #414249;
+  --gt-midnight-500: #11131c;
+  --gt-midnight-600: #0e0f16;
+  --gt-midnight-700: #0a0b11;
+  --gt-midnight-800: #07080b;
+  --gt-midnight-900: #030406;
+
+  --gt-eerie-100: #cfcfd1;
+  --gt-eerie-200: #9ea0a2;
+  --gt-eerie-300: #6e7074;
+  --gt-eerie-400: #3d4145;
+  --gt-eerie-500: #0d1117;
+  --gt-eerie-600: #0a0e12;
+  --gt-eerie-700: #080a0e;
+  --gt-eerie-800: #050709;
+  --gt-eerie-900: #030305;
+
+  --foreground-primary: #000;
+  --foreground-secondry: #b2b2b2;
+  --background-primary: #fafafa;
+  --background-secondry: #fff;
+  --background-codeblock: #f6f8fa;
+  --background-code: var(--gt-frosty-400);
+  --background-th: var(--gt-frosty-300);
+  --background-hover: var(--gt-white-500);
+  --background-highlight: #fde68a;
+  --border-primary: #d8dee4;
+  --outline-primary: var(--gt-slate-100);
+  --shadow-default: #e2e9f0;
+}
+
+.dark {
+  --foreground-primary: #fff;
+  --foreground-secondry: #646464;
+  --background-primary: #000;
+  --background-secondry: #0a0a0a;
+  --background-codeblock: var(--gt-eerie-800);
+  --background-code: var(--gt-slate-800);
+  --background-th: var(--gt-slate-800);
+  --background-hover: var(--gt-slate-800);
+  --background-highlight: #a29358;
+  --border-primary: #30363d;
+  --outline-primary: var(--gt-frosty-900);
+  --shadow-default: #010409;
+}
+
+#comment::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 10px;
+  position: absolute;
+  top: 5%;
+  left: -20px;
+  transform: translateY(-50%);
+  border-right-color: var(--border-primary);
+}
