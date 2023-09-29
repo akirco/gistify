@@ -16,7 +16,7 @@ export async function getPosts() {
     let postsTable;
     const tags = Object.values(gist.files).map((file) => file.language);
     if (isArrayContained(tags, snippets)) {
-      const cover = await getPostCover(tags[0]);
+      const cover = process.env['DEFAULT_COVER'] as string;
       postsTable = {
         id: gist.id,
         tags,
@@ -30,7 +30,7 @@ export async function getPosts() {
       };
       postsData.push(postsTable);
     } else if (isArrayContained(tags, posts)) {
-      const cover = await getPostCover('cat');
+      const cover = process.env['DEFAULT_COVER'] as string;
       const currentGist = await getGist(gist.id);
       const postMetaInfo = Object.values(currentGist.files).map(
         async (file) => {
@@ -66,29 +66,4 @@ export async function getPosts() {
     }
   }
   return postsData;
-}
-
-interface PixabayResponse {
-  hits: Array<{
-    webformatURL: string;
-    webformatWidth: 640;
-    webformatHeight: 351;
-  }>;
-}
-export async function getPostCover(image: string) {
-  const url = `https://pixabay.com/api/?key=${process.env['PIXABAY_KEY']}=${image}&image_type=photo`;
-  const response = await fetch(url, { cache: 'no-cache' });
-  const cover = (await response.json()) as PixabayResponse;
-  const len = cover.hits.length;
-
-  if (len > 0) {
-    try {
-      const index = Math.floor(Math.random() * (len + 1));
-      return cover.hits[index].webformatURL;
-    } catch (error) {
-      return process.env['DEFAULT_COVER'] as string;
-    }
-  } else {
-    return process.env['DEFAULT_COVER'] as string;
-  }
 }

@@ -8,6 +8,7 @@ import {
 
 export async function GET(req: NextRequest) {
   try {
+    await dropArticlesTable();
     await createArticlesTable();
     await insertArticlesData();
     return NextResponse.json({
