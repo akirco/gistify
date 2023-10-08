@@ -1,28 +1,31 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-[中文](READMD_CN.md)
+[中文](./README_CN.md)
 
 ## Next.js and GitHub Gist-based Blog
 
 ### Project Description
 
-This project is a blog system based on Next.js and GitHub Gist. It supports code snippets in various languages, including TypeScript, JavaScript, TSX, JSON, JSON5, Python, Rust, Go, PHP, Lua, Shell, PowerShell, HTML, CSS, and SCSS. Code snippets are displayed in code blocks. Markdown and MDX files are rendered into beautiful web pages using next-mdx-remote.
+This project is a blog system based on Next.js and GitHub Gist. It supports code snippets in various languages, including TypeScript, JavaScript, TSX, JSON, JSON5, Python, Rust, Go, PHP, Lua, Shell, PowerShell, HTML, CSS, and SCSS. Code snippets are displayed in code blocks. Markdown and MDX files are rendered into beautiful web pages using `next-mdx-remote`.
 
 Additionally, this blog system supports categories, tags, and article archives. The commenting feature is currently under testing and will be introduced in future versions. There are also plans to synchronize the star feature of GitHub Gist, allowing users to bookmark articles.
 
 ### Tech Stack
 
-Next.js
-TypeScript
-GitHub Gist
+- Next.js
+- GitHub Gist API
 
 ### Features
 
-Support for code snippets in multiple languages
-Render Markdown and MDX files using next-mdx-remote
-Support for categories, tags, and article archives
-Commenting feature (under testing)
-Planned synchronization of GitHub Gist star feature
+- Support for code snippets in multiple languages
+
+- Render Markdown and MDX files using next-mdx-remote
+
+- Support for categories, tags, and article archives
+
+- Commenting feature (under testing)
+
+- Planned synchronization of GitHub Gist star feature
 
 ### Installation and Usage
 
